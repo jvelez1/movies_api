@@ -19,12 +19,12 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+# Pretty print Ruby objects to visualize their structure.
+gem 'awesome_print', '~> 1.8'
+
+# PG Search
+gem 'pg_search', '~> 2.1.0'
+
 # Allows generate your JSON in an object-oriented and convention-driven manner.
 gem 'active_model_serializers', '~> 0.10.6'
 # Use Redis adapter to run Action Cable in production
@@ -41,6 +41,11 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'factory_girl_rails', '~> 4.9'
+  gem "faker", "~> 1.4.3"
+  gem "database_cleaner", "~> 1.3.0"
+  gem "launchy", "~> 2.4.2"
 end
 
 group :development do
@@ -50,6 +55,23 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Pry on Rails
+  gem 'pry-rails', '0.3.6'
+
+  # Ruby code analysis
+  gem 'rubocop', '~> 0.51.0', require: false
+  
+  # Replaces the standard Rails error page with a much better and more useful
+  gem 'better_errors', '~> 2.3.0'
+
+  # Help to avoid N+1 queries and unused eager loading
+  gem 'bullet', '~> 5.5.1'
+  
+  # Allows you to easily generate a DB diagram
+  gem 'rails-erd', '~> 1.5.2', require: false
+
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
