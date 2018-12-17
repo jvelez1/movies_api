@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181215175107) do
+ActiveRecord::Schema.define(version: 20181215195910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,25 @@ ActiveRecord::Schema.define(version: 20181215175107) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["season_id"], name: "index_episodes_on_season_id"
+  end
+
+  create_table "library_isas", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "library_isa_type"
+    t.bigint "library_isa_id"
+    t.boolean "active", default: true
+    t.datetime "expiry_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["library_isa_type", "library_isa_id"], name: "index_library_isas_on_library_isa_type_and_library_isa_id"
+    t.index ["user_id"], name: "index_library_isas_on_user_id"
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "plot", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "seasons", force: :cascade do |t|
@@ -40,6 +59,14 @@ ActiveRecord::Schema.define(version: 20181215175107) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "full_name", null: false
+    t.string "email", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "episodes", "seasons"
+  add_foreign_key "library_isas", "users"
   add_foreign_key "seasons", "tv_shows"
 end

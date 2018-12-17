@@ -27,6 +27,9 @@ gem 'pg_search', '~> 2.1.0'
 
 # Allows generate your JSON in an object-oriented and convention-driven manner.
 gem 'active_model_serializers', '~> 0.10.6'
+
+# High performance memcached client for Ruby
+gem 'dalli', '~> 2.7', '>= 2.7.6'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
