@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :movies, only: %i[index show]
     resources :seasons, only: %i[index show]
+    resources :medias, only: %i[index]
   end
 end

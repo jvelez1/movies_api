@@ -8,5 +8,4 @@ class MediaSerializer < ActiveModel::Serializer
   def movies
     object.attributes[:movies].map { |movie| MovieSerializer.new(movie) }
   end
-
 end
