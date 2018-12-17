@@ -4,5 +4,8 @@ Rails.application.routes.draw do
     resources :movies, only: %i[index show]
     resources :seasons, only: %i[index show]
     resources :medias, only: %i[index]
+    resources :user, except: %i[index show new edit update destroy create] do
+      resources :libraries, shallow: true, only: %i[index]
+    end
   end
 end
