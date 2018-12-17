@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :medias, only: %i[index]
     resources :user, except: %i[index show new edit update destroy create] do
       resources :libraries, shallow: true, only: %i[index]
+      resources :purchases, only: %i[create]
     end
   end
 end

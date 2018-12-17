@@ -314,3 +314,15 @@ User.create(
   ]
 )
 
+PurchaseOption.create(
+  [
+    {
+      price: 2.99,
+      video_quality: 'HD'
+    },
+    {
+      price: 2.50,
+      video_quality: 'SD'
+    }
+  ]
+)

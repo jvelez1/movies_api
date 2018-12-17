@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181215195910) do
+ActiveRecord::Schema.define(version: 20181217140514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,26 @@ ActiveRecord::Schema.define(version: 20181215195910) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "purchase_options", force: :cascade do |t|
+    t.float "price", default: 0.0, null: false
+    t.string "video_quality", default: "HD", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "purchase_option_id", null: false
+    t.string "status", default: "peding", null: false
+    t.float "amount", default: 0.0, null: false
+    t.string "media_type", default: "movie", null: false
+    t.integer "media_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchase_option_id"], name: "index_purchases_on_purchase_option_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
   create_table "seasons", force: :cascade do |t|
     t.bigint "tv_show_id", null: false
     t.integer "season_number", null: false
@@ -68,5 +88,7 @@ ActiveRecord::Schema.define(version: 20181215195910) do
 
   add_foreign_key "episodes", "seasons"
   add_foreign_key "library_isas", "users"
+  add_foreign_key "purchases", "purchase_options"
+  add_foreign_key "purchases", "users"
   add_foreign_key "seasons", "tv_shows"
 end
