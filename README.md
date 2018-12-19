@@ -1,7 +1,12 @@
 # README
 
-Basic API, using Rspec, caching, and serializer
-includes the database structure database in a file **erd.pdf**
+Basic API, using Rspec, caching, and serializer.
+includes the database structure database in a file 
+[ERD.PDF](https://github.com/jvelez1/movies_api/blob/master/erd.pdf)
+
+<p align="center">
+  <img width="460" height="300" src="https://raw.githubusercontent.com/jvelez1/movies_api/master/erd.png">
+</p>
 
 **Basic to run the project**
 ```
