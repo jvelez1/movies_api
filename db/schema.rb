@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20181217140514) do
     t.string "status", default: "peding", null: false
     t.float "amount", default: 0.0, null: false
     t.string "media_type", default: "movie", null: false
-    t.integer "media_id", null: false
+    t.integer "media_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["purchase_option_id"], name: "index_purchases_on_purchase_option_id"

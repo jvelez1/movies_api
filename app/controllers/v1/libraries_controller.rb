@@ -4,7 +4,7 @@ module V1
 
     def index
       @libraries = @user.library_isas
-                        .active_by_date(Time.now - 2.days)
+                        .active_by_date(Time.now)
                         .order_by_expiry_date
       render json: @libraries, each_serializer: ::LibrarySerializer
     end

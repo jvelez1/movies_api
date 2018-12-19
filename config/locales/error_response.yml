@@ -1,0 +1,6 @@
+es:
+  error_response:
+    Movie: "La pelicula"
+    Season: "La temporada"
+    Purchase: "La compra"
+    User: "El usuario"

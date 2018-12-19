@@ -1,3 +1,5 @@
 es:
   Movie: "pelicula"
   Season: "temporada"
+  Purchase: "compra"
+  User: "usuario"

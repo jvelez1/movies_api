@@ -21,7 +21,7 @@ class ErrorResponse
   def self.record_not_found(klass)
     new(
       title: "#{klass.model_name.human} no encontrado",
-      description: "#{klass.model_name.human} no existe o no tiene acceso",
+      description: "#{I18n.t(klass.model_name.human, scope: 'error_response')} no existe",
       status_code: :not_found
     )
   end
@@ -29,7 +29,7 @@ class ErrorResponse
   def self.record_not_saved(record, reasons = nil)
     new(
       title: 'Ups! Revisa los siguientes campos',
-      description: '#{record.class.model_name.human} presenta valores incorrectos en sus atributos',
+      description: "#{I18n.t(record.class.model_name.human, scope: 'error_response')} presenta valores incorrectos en sus atributos",
       reasons: reasons || record.errors.messages,
       status_code: :unprocessable_entity
     )
