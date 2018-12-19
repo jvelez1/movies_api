@@ -1,7 +1,6 @@
 # README
 
 Basic API, using Rspec, caching, and serializer
-
 **Basic to run the project**
 ```
 rails db:create
@@ -13,25 +12,32 @@ rails s
 **Routes**
 
 > /v1/movies
-returns the list of movies ordered by date of creation 
+
+**returns the list of movies ordered by date of creation**
 
 > /v1/movies/:id
-returns movie by id
+
+**returns movie by id**
 
 > /v1/seasons
-returns the list of seasons ordered by date of creation, includes tv show, and episodes (order by number) by season
+
+**returns the list of seasons ordered by date of creation, includes tv show, and episodes (order by number) by season**
 
 > /v1/seasons/:id
-returns season by id, includes tv show, and episodes (order by number) by season
+
+**returns season by id, includes tv show, and episodes (order by number) by season**
 
 > /v1/medias
-list seasons and movies grouped
+
+**list seasons and movies grouped**
 
 > /v1/user/:user_id/libraries
-list the user's library to consult, movies and seasons grouped, and active in the current date, ordered next to expire first.
+
+**list the user's library to consult, movies and seasons grouped, and active in the current date, ordered next to expire first.**
 
 > /v1/user/:user_id/purchases
-An endpoint to create a purchase, and assign or re-activate (using expiry_date) a media to a user.
+
+**An endpoint to create a purchase, and assign or re-activate (using expiry_date) a media to a user.**
 
 **Some responses**
 
