@@ -1,6 +1,8 @@
 # README
 
 Basic API, using Rspec, caching, and serializer
+includes the database structure database in a file **erd.pdf**
+
 **Basic to run the project**
 ```
 rails db:create
