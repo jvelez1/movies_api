@@ -282,16 +282,14 @@ TvShow.create(
   ]
 )
 
-Movie.create(
-  [
-    { name: 'Star Wars',
-      plot: 'Es una serie de películas originalmente concebidas por el cineasta estadounidense George Lucas'
-    },
-    { name: 'Lord of the Rings',
-      plot: 'Basada en la novela homónima del escritor británico J. R. R. Tolkien'
-    }
-  ]
-)
+(1..300).map do |_|
+  Movie.create(name: Faker::Book.title,
+               plot: Faker::Myst.quote,
+               year: Random.new.rand(1990...2019),
+               directed_by: Faker::Artist.name,
+               production_company: Faker::Company.name,
+               country: Faker::Address.country)
+end
 
 User.create(
   [

@@ -25,6 +25,9 @@ gem 'awesome_print', '~> 1.8'
 # PG Search
 gem 'pg_search', '~> 2.1.0'
 
+# Full-fledged implementation of the GraphQL spec. Includes query parsing, static validation, type definition, and query execution.
+gem 'graphql', '~> 1.8', '>= 1.8.13'
+
 # Allows generate your JSON in an object-oriented and convention-driven manner.
 gem 'active_model_serializers', '~> 0.10.6'
 
@@ -46,9 +49,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem 'factory_girl_rails', '~> 4.9'
-  gem "faker", "~> 1.4.3"
+  gem 'faker', '~> 1.9', '>= 1.9.1'
   gem "database_cleaner", "~> 1.3.0"
   gem "launchy", "~> 2.4.2"
+  gem 'rspec-graphql_matchers', '~> 0.7.1'
 end
 
 group :development do
@@ -79,3 +83,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'graphiql-rails', group: :development

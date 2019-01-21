@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20181217140514) do
   create_table "movies", force: :cascade do |t|
     t.string "name", null: false
     t.text "plot", null: false
+    t.integer "year", null: false
+    t.string "directed_by", null: false
+    t.string "production_company", null: false
+    t.string "country", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

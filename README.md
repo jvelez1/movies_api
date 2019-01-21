@@ -1,6 +1,6 @@
 # README
 
-Basic API, using Rspec, caching, and serializer.
+Basic API, using Rspec, caching, serializer, and a simple GraphQL implementation.
 includes the database structure database in a file 
 [ERD.PDF](https://github.com/jvelez1/movies_api/blob/master/erd.pdf)
 
@@ -16,7 +16,45 @@ rails db:seed
 rails s
 ```
 
-**Routes**
+**GraphQL: [URL:PORT]/graphiql**
+> query
+
+```
+query {
+  movies {
+    id
+    name
+    plot
+  }
+}
+```
+> response
+
+```
+{
+  "data": {
+    "movies": [
+      {
+        "id": "1",
+        "name": "Rosemary Sutcliff",
+        "plot": "One thing I know about linking books is that the doors they open don't close behind you."
+      },
+      {
+        "id": "2",
+        "name": "Taming a Sea Horse",
+        "plot": "One thing I know about linking books is that the doors they open don't close behind you."
+      },
+      {
+        "id": "3",
+        "name": "Bury My Heart at Wounded Knee",
+        "plot": "One thing I know about linking books is that the doors they open don't close behind you."
+      }
+    ]
+  }
+}
+```
+
+**API Routes**
 
 > /v1/movies
 
@@ -120,19 +158,27 @@ success purchase
  {
     "movies": [
         {
-            "id": 1,
-            "name": "Star Wars",
-            "plot": "Es una serie de películas originalmente concebidas por el cineasta estadounidense George Lucas",
-            "created_at": "2018-12-19T01:01:04.794Z",
-            "updated_at": "2018-12-19T01:01:04.794Z"
-        },
-        {
-            "id": 2,
-            "name": "Lord of the Rings",
-            "plot": "Basada en la novela homónima del escritor británico J. R. R. Tolkien",
-            "created_at": "2018-12-19T01:01:04.800Z",
-            "updated_at": "2018-12-19T01:01:04.800Z"
-        }
+          "id": 1,
+          "name": "Rosemary Sutcliff",
+          "plot": "Bring me blue pages.",
+          "year": 2016,
+          "directed_by": "Cassatt",
+          "production_company": "Rocha y Valdivia",
+          "country": "China",
+          "created_at": "2019-01-20T12:16:19.963Z",
+          "updated_at": "2019-01-20T12:16:19.963Z"
+          },
+          {
+          "id": 2,
+          "name": "Taming a Sea Horse",
+          "plot": "One thing I know about linking books is that the doors they open don't close behind you.",
+          "year": 1994,
+          "directed_by": "Raphael",
+          "production_company": "Bonilla, Valdivia y Ibarra Asociados",
+          "country": "Guayana",
+          "created_at": "2019-01-20T12:16:19.970Z",
+          "updated_at": "2019-01-20T12:16:19.970Z"
+          }
     ],
     "seasons": [
         {
